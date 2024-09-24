@@ -66,6 +66,7 @@ dependencies {
   implementation Libs.AndroidX.Compose.animation
   implementation Libs.AndroidX.Compose.tooling
   implementation Libs.AndroidX.Compose.activity
+  implementation("androidx.compose.material3:material3:1.1.2")
 
   implementation Libs.Coil.sdk
   implementation "com.google.android.exoplayer:exoplayer:2.18.0" // Ensure you're using the latest version

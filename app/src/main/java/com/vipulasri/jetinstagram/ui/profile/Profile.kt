@@ -39,6 +39,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.vipulasri.jetinstagram.R
+import com.vipulasri.jetinstagram.model.currentUser
 import com.vipulasri.jetinstagram.ui.components.HighlightsContainer
 import com.vipulasri.jetinstagram.ui.components.Tabs
 import com.vipulasri.jetinstagram.ui.components.TopBar
@@ -68,9 +69,9 @@ fun Profile() {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column {
-                    StoryImage(batmanImageUri)
+                    StoryImage(currentUser.image)
                     Text(
-                        text = "Daniwex",
+                        text = currentUser.username,
                         fontWeight = FontWeight.Bold,
                         fontSize = 22.sp,
                         modifier = Modifier.padding(vertical = 10.dp)
