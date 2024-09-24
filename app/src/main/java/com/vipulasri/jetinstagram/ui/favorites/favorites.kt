@@ -25,12 +25,16 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.android.material.search.SearchBar
+import com.vipulasri.jetinstagram.data.StoriesRepository
+import com.vipulasri.jetinstagram.ui.components.FavoritesContainer
 import com.vipulasri.jetinstagram.ui.components.SearchBar
 import com.vipulasri.jetinstagram.ui.components.TopBarFavorites
 
 @Composable
 fun Favorites() {
     var searchQuery by rememberSaveable { mutableStateOf("") }
+    val stories by StoriesRepository.observeStories()
+
     Scaffold(
         topBar = { TopBarFavorites("Favorites") }, modifier = Modifier.padding(top = 10.dp)
     ) { innerPadding ->
@@ -65,7 +69,7 @@ fun Favorites() {
                     placeholder = { Text("Search") },
                     onActiveChanged = { /* Handle active change */ }
                 )
-
+                FavoritesContainer(stories)
             }
 
         }
